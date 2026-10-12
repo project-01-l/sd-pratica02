@@ -1,0 +1,700 @@
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">SD</div>
+      <div>
+        <strong>Segurança Digital</strong>
+        <span>Atividade prática</span>
+      </div>
+    </div>
+
+    <div class="topbar-info">
+      <div class="timer-box">
+        <span class="status-dot"></span>
+        <span id="timer-display">00:00</span>
+      </div>
+      <div class="points-box">
+        <span>Pontuação</span>
+        <strong id="header-points">0</strong>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-heading">ROTEIRO DA ATIVIDADE</div>
+
+      <button class="nav-item active" data-target="overview">
+        <span class="nav-number">00</span>
+        <span class="nav-copy">
+          <strong>Visão geral</strong>
+          <small>Objetivos e progresso</small>
+        </span>
+        <span class="nav-arrow">›</span>
+      </button>
+
+      <button class="nav-item" data-target="mission-phishing">
+        <span class="nav-number">01</span>
+        <span class="nav-copy">
+          <strong>Mensagem suspeita</strong>
+          <small>Identifique os sinais</small>
+        </span>
+        <span class="mission-status" id="status-phishing"></span>
+      </button>
+
+      <button class="nav-item" data-target="mission-password">
+        <span class="nav-number">02</span>
+        <span class="nav-copy">
+          <strong>Senhas</strong>
+          <small>Entenda a resistência</small>
+        </span>
+        <span class="mission-status" id="status-pin"></span>
+      </button>
+
+      <button class="nav-item" data-target="mission-mfa">
+        <span class="nav-number">03</span>
+        <span class="nav-copy">
+          <strong>Proteção da conta</strong>
+          <small>Escolha uma verificação</small>
+        </span>
+        <span class="mission-status" id="status-storage"></span>
+      </button>
+
+      <button class="nav-item" data-target="mission-quiz">
+        <span class="nav-number">04</span>
+        <span class="nav-copy">
+          <strong>Questionário</strong>
+          <small>Revise os conceitos</small>
+        </span>
+        <span class="mission-status" id="status-quiz"></span>
+      </button>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-progress-label">
+          <span>Progresso</span>
+          <strong id="progress-percent">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p id="progress-caption">Nenhuma missão concluída.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="view active" id="overview">
+        <div class="eyebrow">ATIVIDADE INTERATIVA · 1º ANO</div>
+        <h1>Segurança Digital na Prática</h1>
+        <p class="lead">
+          Analise situações comuns na internet, compare formas de proteção
+          e teste o que você sabe sobre segurança digital.
+        </p>
+
+        <div class="overview-banner">
+          <div class="banner-copy">
+            <span class="banner-label">SEU OBJETIVO</span>
+            <h2>Observe, analise e decida.</h2>
+            <p>
+              Em cada etapa, leia a situação com atenção e escolha a resposta
+              que faz mais sentido. Ao final, confira seu resultado.
+            </p>
+            <button class="primary-button" id="start-lab">
+              Iniciar atividade <span>→</span>
+            </button>
+          </div>
+          <div class="banner-graphic" aria-hidden="true">
+            <div class="graphic-ring ring-one"></div>
+            <div class="graphic-ring ring-two"></div>
+            <div class="graphic-shield">
+              <svg viewBox="0 0 80 90" role="img" aria-label="">
+                <path d="M40 5 L68 16 V39 C68 58 56 73 40 84 C24 73 12 58 12 39 V16 Z"
+                  fill="none" stroke="currentColor" stroke-width="4"
+                  stroke-linejoin="round"/>
+                <path d="M27 43 L36 52 L54 32"
+                  fill="none" stroke="currentColor" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="graphic-dot dot-one"></span>
+            <span class="graphic-dot dot-two"></span>
+            <span class="graphic-dot dot-three"></span>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <h2>Etapas da atividade</h2>
+            <p>Complete as quatro missões para ver seu resultado.</p>
+          </div>
+          <span class="small-counter">4 MISSÕES</span>
+        </div>
+
+        <div class="mission-grid">
+          <button class="mission-card" data-target="mission-phishing">
+            <span class="card-index">01 / ANÁLISE</span>
+            <span class="card-icon icon-alert">!</span>
+            <strong>Mensagem suspeita</strong>
+            <span>Encontre os indícios de uma possível tentativa de golpe.</span>
+            <span class="card-link">Abrir missão <b>→</b></span>
+          </button>
+
+          <button class="mission-card" data-target="mission-password">
+            <span class="card-index">02 / SENHAS</span>
+            <span class="card-icon icon-lock">#</span>
+            <strong>Resistência das senhas</strong>
+            <span>Veja como o tamanho e a variedade de caracteres influenciam.</span>
+            <span class="card-link">Abrir missão <b>→</b></span>
+          </button>
+
+          <button class="mission-card" data-target="mission-mfa">
+            <span class="card-index">03 / CONTAS</span>
+            <span class="card-icon icon-shield">✓</span>
+            <strong>Proteção da conta</strong>
+            <span>Compare opções de verificação em duas etapas.</span>
+            <span class="card-link">Abrir missão <b>→</b></span>
+          </button>
+
+          <button class="mission-card" data-target="mission-quiz">
+            <span class="card-index">04 / REVISÃO</span>
+            <span class="card-icon icon-check">?</span>
+            <strong>Questionário final</strong>
+            <span>Use o que aprendeu para responder a situações variadas.</span>
+            <span class="card-link">Abrir missão <b>→</b></span>
+          </button>
+        </div>
+
+        <div class="notice">
+          <span class="notice-mark">i</span>
+          <p>
+            As situações são simuladas para fins educativos. Não informe senhas,
+            códigos de autenticação nem dados pessoais reais durante a atividade.
+          </p>
+        </div>
+      </section>
+
+      <section class="view" id="mission-phishing">
+        <div class="view-topline">
+          <span class="eyebrow">MISSÃO 01 · ANÁLISE DE MENSAGENS</span>
+          <span class="points-tag">ATÉ 25 PONTOS</span>
+        </div>
+
+        <h1>Essa mensagem é confiável?</h1>
+        <p class="lead">
+          Leia o exemplo. Marque os sinais que merecem atenção antes de clicar
+          em um link ou fornecer informações.
+        </p>
+
+        <div class="email-card">
+          <div class="email-top">
+            <div class="sender-avatar">S</div>
+            <div class="sender-info">
+              <strong>Suporte da sua conta</strong>
+              <span>notificacao@conta-verificacao.example</span>
+            </div>
+            <span class="email-label">EXEMPLO SIMULADO</span>
+          </div>
+
+          <div class="email-body">
+            <p class="email-subject">AVISO: sua conta será bloqueada!</p>
+            <p>Olá, cliente.</p>
+            <p>
+              Detectamos um problema na sua conta. Você precisa confirmar seus
+              dados <strong>imediatamente</strong> para evitar o bloqueio.
+            </p>
+            <p>
+              Acesse o endereço abaixo para regularizar sua situação:
+            </p>
+            <div class="fake-link">https://conta-segura-verificacao.example</div>
+            <p>Se não fizer isso nos próximos minutos, perderá o acesso.</p>
+            <p class="email-signature">Equipe de atendimento</p>
+          </div>
+        </div>
+
+        <div class="task-panel">
+          <div class="task-heading">
+            <span class="task-number">01</span>
+            <div>
+              <h2>Quais sinais chamam sua atenção?</h2>
+              <p>Marque todas as opções que considerar suspeitas.</p>
+            </div>
+          </div>
+
+          <div class="choice-list">
+            <label class="choice-row">
+              <input type="checkbox" class="selectable-clue" data-clue="pressure">
+              <span class="custom-checkbox"></span>
+              <span class="choice-text">
+                <strong>Pressão para agir rapidamente</strong>
+                <small>A mensagem ameaça bloquear a conta em poucos minutos.</small>
+              </span>
+            </label>
+
+            <label class="choice-row">
+              <input type="checkbox" class="selectable-clue" data-clue="link">
+              <span class="custom-checkbox"></span>
+              <span class="choice-text">
+                <strong>Endereço que precisa ser verificado</strong>
+                <small>O link não deve ser considerado confiável só pelo nome.</small>
+              </span>
+            </label>
+
+            <label class="choice-row">
+              <input type="checkbox" class="selectable-clue" data-clue="generic">
+              <span class="custom-checkbox"></span>
+              <span class="choice-text">
+                <strong>Saudação genérica</strong>
+                <small>A mensagem chama o destinatário apenas de “cliente”.</small>
+              </span>
+            </label>
+
+            <label class="choice-row">
+              <input type="checkbox" class="selectable-clue" data-clue="logo">
+              <span class="custom-checkbox"></span>
+              <span class="choice-text">
+                <strong>A mensagem tem uma assinatura</strong>
+                <small>Isso, sozinho, prova que a mensagem é verdadeira.</small>
+              </span>
+            </label>
+          </div>
+
+          <div class="feedback-box" id="phishing-feedback" aria-live="polite"></div>
+
+          <div class="task-actions">
+            <button class="primary-button" id="check-phishing">Conferir seleção</button>
+            <button class="secondary-button" id="complete-phishing" disabled>
+              Concluir missão
+            </button>
+          </div>
+        </div>
+
+        <div class="mission-footer">
+          <span>Missão 1 de 4</span>
+          <button class="text-button" data-target="mission-password">
+            Ir para Senhas <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="view" id="mission-password">
+        <div class="view-topline">
+          <span class="eyebrow">MISSÃO 02 · SENHAS</span>
+          <span class="points-tag">ATÉ 20 PONTOS</span>
+        </div>
+
+        <h1>O que torna uma senha mais resistente?</h1>
+        <p class="lead">
+          Explore o simulador. Ele estima quantas combinações seriam possíveis
+          para uma senha com as características escolhidas.
+        </p>
+
+        <div class="simulator-grid">
+          <div class="task-panel simulator-controls">
+            <div class="task-heading">
+              <span class="task-number">01</span>
+              <div>
+                <h2>Configure a senha simulada</h2>
+                <p>Altere as opções e observe a estimativa.</p>
+              </div>
+            </div>
+
+            <div class="range-heading">
+              <label for="password-length">Quantidade de caracteres</label>
+              <strong><span id="password-stat-length">12</span></strong>
+            </div>
+            <input type="range" id="password-length" min="4" max="24" value="12">
+            <div class="range-ends">
+              <span>4 caracteres</span>
+              <span>24 caracteres</span>
+            </div>
+
+            <div class="toggle-list">
+              <label class="toggle-row">
+                <span>
+                  <strong>Letras minúsculas</strong>
+                  <small>a, b, c...</small>
+                </span>
+                <input type="checkbox" id="set-lower" checked>
+                <span class="toggle-ui"></span>
+              </label>
+
+              <label class="toggle-row">
+                <span>
+                  <strong>Letras maiúsculas</strong>
+                  <small>A, B, C...</small>
+                </span>
+                <input type="checkbox" id="set-upper" checked>
+                <span class="toggle-ui"></span>
+              </label>
+
+              <label class="toggle-row">
+                <span>
+                  <strong>Números</strong>
+                  <small>0, 1, 2...</small>
+                </span>
+                <input type="checkbox" id="set-digits" checked>
+                <span class="toggle-ui"></span>
+              </label>
+
+              <label class="toggle-row">
+                <span>
+                  <strong>Símbolos</strong>
+                  <small>!, @, #...</small>
+                </span>
+                <input type="checkbox" id="set-symbols">
+                <span class="toggle-ui"></span>
+              </label>
+            </div>
+
+            <div class="notice compact-notice">
+              <span class="notice-mark">i</span>
+              <p>
+                Este cálculo é uma estimativa teórica. Ele não mede a segurança
+                de uma senha real nem considera todos os métodos de ataque.
+              </p>
+            </div>
+          </div>
+
+          <div class="password-result">
+            <span class="result-overline">ESTIMATIVA DE COMBINAÇÕES</span>
+            <div class="result-symbol">#</div>
+            <strong id="password-combinations">365.615.844.006.297.600</strong>
+            <span class="result-caption">combinações possíveis, aproximadamente</span>
+
+            <div class="result-divider"></div>
+
+            <div class="stat-line">
+              <span>Tamanho</span>
+              <strong id="password-stat-length-copy">12 caracteres</strong>
+            </div>
+            <div class="stat-line">
+              <span>Caracteres disponíveis</span>
+              <strong id="password-pool-size">62</strong>
+            </div>
+            <div class="stat-line">
+              <span>Entropia teórica</span>
+              <strong id="password-entropy">71,5 bits</strong>
+            </div>
+
+            <div class="insight-box">
+              <strong>O que observar</strong>
+              <p id="password-insight">
+                Aumentar o tamanho da senha pode ampliar bastante o número de combinações.
+              </p>
+            </div>
+            <p class="password-explanation" id="password-explanation">
+              O cálculo considera o conjunto de caracteres selecionado e o tamanho definido.
+            </p>
+          </div>
+        </div>
+
+        <div class="task-panel quiz-single">
+          <div class="task-heading">
+            <span class="task-number">02</span>
+            <div>
+              <h2>Escolha a melhor resposta</h2>
+              <p>Qual destas práticas ajuda mais a proteger uma conta?</p>
+            </div>
+          </div>
+
+          <div class="radio-list">
+            <label class="radio-row">
+              <input type="radio" name="password-answer" value="a">
+              <span class="custom-radio"></span>
+              <span>Usar a mesma senha em todos os sites para não esquecer.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="password-answer" value="b">
+              <span class="custom-radio"></span>
+              <span>Usar senhas longas e únicas, de preferência com um gerenciador de senhas.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="password-answer" value="c">
+              <span class="custom-radio"></span>
+              <span>Usar apenas o próprio nome e o ano de nascimento.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="password-answer" value="d">
+              <span class="custom-radio"></span>
+              <span>Compartilhar a senha com amigos de confiança.</span>
+            </label>
+          </div>
+
+          <div class="feedback-box" id="pin-feedback" aria-live="polite"></div>
+
+          <div class="task-actions">
+            <button class="primary-button" id="complete-pin">Conferir resposta</button>
+            <button class="secondary-button" id="next-password" data-target="mission-mfa" disabled>
+              Próxima missão →
+            </button>
+          </div>
+        </div>
+
+        <div class="mission-footer">
+          <span>Missão 2 de 4</span>
+          <button class="text-button" data-target="mission-mfa">
+            Ir para Proteção da conta <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="view" id="mission-mfa">
+        <div class="view-topline">
+          <span class="eyebrow">MISSÃO 03 · PROTEÇÃO DE CONTAS</span>
+          <span class="points-tag">ATÉ 15 PONTOS</span>
+        </div>
+
+        <h1>Uma senha pode não ser suficiente</h1>
+        <p class="lead">
+          A verificação em duas etapas acrescenta uma confirmação além da senha.
+          Escolha uma opção para comparar os métodos.
+        </p>
+
+        <div class="mfa-intro">
+          <div class="mfa-intro-icon">2FA</div>
+          <div>
+            <strong>O que é a verificação em duas etapas?</strong>
+            <p>
+              É uma camada extra de proteção. Mesmo que alguém descubra sua senha,
+              ainda poderá precisar de outra forma de comprovar sua identidade.
+            </p>
+          </div>
+        </div>
+
+        <div class="task-panel">
+          <div class="task-heading">
+            <span class="task-number">01</span>
+            <div>
+              <h2>Compare os métodos</h2>
+              <p>Selecione uma opção para ver seus pontos fortes e limitações.</p>
+            </div>
+          </div>
+
+          <div class="mfa-options">
+            <label class="mfa-option">
+              <input type="radio" name="mfa-method" value="none">
+              <span class="mfa-option-content">
+                <span class="mfa-option-icon">—</span>
+                <strong>Sem verificação extra</strong>
+                <small>A conta depende apenas da senha.</small>
+              </span>
+            </label>
+
+            <label class="mfa-option">
+              <input type="radio" name="mfa-method" value="sms">
+              <span class="mfa-option-content">
+                <span class="mfa-option-icon">SMS</span>
+                <strong>Código por mensagem</strong>
+                <small>O código chega por SMS no celular.</small>
+              </span>
+            </label>
+
+            <label class="mfa-option">
+              <input type="radio" name="mfa-method" value="app">
+              <span class="mfa-option-content">
+                <span class="mfa-option-icon">APP</span>
+                <strong>Aplicativo autenticador</strong>
+                <small>Gera códigos no aplicativo configurado.</small>
+              </span>
+            </label>
+
+            <label class="mfa-option">
+              <input type="radio" name="mfa-method" value="passkey">
+              <span class="mfa-option-content">
+                <span class="mfa-option-icon">PK</span>
+                <strong>Chave de acesso</strong>
+                <small>Usa uma credencial criptográfica vinculada ao dispositivo ou sincronizada.</small>
+              </span>
+            </label>
+          </div>
+
+          <div class="mfa-detail" id="mfa-detail" aria-live="polite">
+            <span class="detail-label">COMPARAÇÃO</span>
+            <strong id="mfa-detail-title">Selecione um método</strong>
+            <p id="mfa-detail-text">
+              A descrição aparecerá aqui para ajudar na comparação.
+            </p>
+          </div>
+
+          <div class="task-heading second-task-heading">
+            <span class="task-number">02</span>
+            <div>
+              <h2>Qual é a melhor escolha entre estas opções?</h2>
+              <p>Considere a proteção oferecida, não apenas a praticidade.</p>
+            </div>
+          </div>
+
+          <div class="radio-list">
+            <label class="radio-row">
+              <input type="radio" name="mfa-answer" value="a">
+              <span class="custom-radio"></span>
+              <span>Desativar a verificação extra para entrar mais rápido.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="mfa-answer" value="b">
+              <span class="custom-radio"></span>
+              <span>Usar o mesmo código de confirmação para todas as entradas.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="mfa-answer" value="c">
+              <span class="custom-radio"></span>
+              <span>Ativar uma opção forte de verificação e guardar os métodos de recuperação com segurança.</span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="mfa-answer" value="d">
+              <span class="custom-radio"></span>
+              <span>Enviar o código recebido para outra pessoa confirmar a conta.</span>
+            </label>
+          </div>
+
+          <div class="feedback-box" id="mfa-feedback" aria-live="polite"></div>
+
+          <div class="task-actions">
+            <button class="primary-button" id="check-mfa">Conferir resposta</button>
+            <button class="secondary-button" id="complete-storage" disabled>
+              Concluir missão
+            </button>
+          </div>
+        </div>
+
+        <div class="mission-footer">
+          <span>Missão 3 de 4</span>
+          <button class="text-button" data-target="mission-quiz">
+            Ir para Questionário <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="view" id="mission-quiz">
+        <div class="view-topline">
+          <span class="eyebrow">MISSÃO 04 · REVISÃO</span>
+          <span class="points-tag">ATÉ 40 PONTOS</span>
+        </div>
+
+        <h1>Questionário de segurança digital</h1>
+        <p class="lead">
+          Responda às questões com base nos conceitos trabalhados nas missões.
+          A última questão pede uma resposta escrita.
+        </p>
+
+        <div class="quiz-shell" id="quiz-shell">
+          <div class="quiz-top">
+            <div>
+              <span class="result-overline" id="quiz-question-meta">QUESTÃO 01</span>
+              <h2 id="quiz-question">Carregando questão...</h2>
+            </div>
+            <span class="quiz-counter" id="quiz-counter">1 / 10</span>
+          </div>
+
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <p class="quiz-instruction" id="quiz-instruction">
+            Escolha uma resposta.
+          </p>
+
+          <div id="quiz-options" class="quiz-options"></div>
+
+          <div class="feedback-box" id="quiz-feedback" aria-live="polite"></div>
+
+          <div class="quiz-bottom">
+            <span id="quiz-score-preview">Pontuação: 0</span>
+            <button class="primary-button" id="quiz-next">Conferir resposta</button>
+          </div>
+        </div>
+
+        <div class="quiz-result hidden" id="quiz-result">
+          <div class="result-symbol">✓</div>
+          <span class="result-overline">QUESTIONÁRIO CONCLUÍDO</span>
+          <h2 id="quiz-result-message">Confira seu desempenho.</h2>
+          <p>Sua pontuação nesta etapa:</p>
+          <strong class="quiz-final-points"><span id="quiz-final-score">0</span><small> / 40 pontos</small></strong>
+          <button class="primary-button" id="complete-quiz">Registrar resultado</button>
+          <button class="secondary-button" id="next-quiz">Ver resultado geral</button>
+        </div>
+
+        <div class="mission-footer">
+          <span>Missão 4 de 4</span>
+          <button class="text-button" data-target="overview">
+            Voltar ao início <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="view" id="completion">
+        <div class="completion-header">
+          <div class="completion-symbol">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <path d="M13 31 L25 43 L48 18" fill="none" stroke="currentColor"
+                stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="eyebrow">FIM DA ATIVIDADE</span>
+          <h1>Resultado da atividade</h1>
+          <p id="final-score-message">
+            Confira os pontos e as etapas concluídas.
+          </p>
+        </div>
+
+        <div class="score-summary">
+          <div class="score-main">
+            <span>PONTUAÇÃO TOTAL</span>
+            <div><strong id="final-points">0</strong><small> / 105 pontos</small></div>
+            <div class="score-track">
+              <div class="score-fill" id="final-score-fill"></div>
+            </div>
+          </div>
+
+          <div class="score-stat">
+            <span>Missões concluídas</span>
+            <strong id="final-missions">0 / 4</strong>
+          </div>
+
+          <div class="score-stat">
+            <span>Tempo utilizado</span>
+            <strong id="final-time">00:00</strong>
+          </div>
+
+          <div class="score-stat">
+            <span>Bônus por tempo</span>
+            <strong id="final-time-bonus">0</strong>
+          </div>
+        </div>
+
+        <div class="task-panel final-review">
+          <div class="task-heading">
+            <span class="task-number">✓</span>
+            <div>
+              <h2>O que foi praticado</h2>
+              <p>As quatro etapas trabalharam situações diferentes de segurança digital.</p>
+            </div>
+          </div>
+
+          <div class="review-list">
+            <div class="review-row">
+              <span>01</span>
+              <div><strong>Mensagens suspeitas</strong><small>Reconhecer pressão, links duvidosos e outros sinais de possível golpe.</small></div>
+            </div>
+            <div class="review-row">
+              <span>02</span>
+              <div><strong>Senhas</strong><small>Entender o efeito do tamanho e da variedade de caracteres.</small></div>
+            </div>
+            <div class="review-row">
+              <span>03</span>
+              <div><strong>Proteção de contas</strong><small>Comparar métodos de verificação e formas de recuperação.</small></div>
+            </div>
+            <div class="review-row">
+              <span>04</span>
+              <div><strong>Questionário</strong><small>Revisar conceitos e aplicá-los a situações do cotidiano.</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="completion-actions">
+          <button class="primary-button" id="restart-all">Refazer atividade</button>
+          <button class="secondary-button" data-target="overview">Voltar ao início</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
